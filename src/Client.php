@@ -4,10 +4,18 @@ namespace Postal;
 
 class Client
 {
+    protected $ssl_verify;
+
     public function __construct($host, $serverKey)
     {
         $this->host = $host;
         $this->serverKey = $serverKey;
+        $this->ssl_verify = true;
+    }
+
+    public function sslVerify($verify)
+    {
+        $this->ssl_verify = $verify;
     }
 
     public function makeRequest($controller, $action, $parameters)
@@ -24,7 +32,7 @@ class Client
         $json = json_encode($parameters);
 
         // Make the request
-        $response = \Requests::post($url, $headers, $json);
+        $response = \Requests::post($url, $headers, $json, array('verify' => $this->ssl_verify));
 
         if ($response->status_code === 200) {
             $json = json_decode($response->body);

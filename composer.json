@@ -1,6 +1,6 @@
 {
-    "name": "postal/postal",
-    "description": "Postal for PHP library.",
+    "name": "whatpulse/postal",
+    "description": "Postal for PHP library (WhatPulse fork).",
     "keywords": ["postal", "mail"],
     "license": "MIT",
     "homepage":"https://github.com/atech/postal",
