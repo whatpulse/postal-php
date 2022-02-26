@@ -1,24 +1,22 @@
 {
-    "name": "whatpulse/postal",
-    "description": "Postal for PHP library (WhatPulse fork).",
-    "keywords": ["postal", "mail"],
-    "license": "MIT",
-    "homepage":"https://github.com/atech/postal",
-    "authors": [
-        {
-            "name": "Adam Cooke",
-            "email": "me@adamcooke.io"
-        }
-    ],
-    "type": "library",
-    "version": "1.1",
-    "require": {
-		"php": ">=5.4",
-        "rmccue/requests": ">=1.0"
-    },
-	"autoload": {
-        "psr-4": {
-            "Postal\\": "src/"
-        }
+  "name": "whatpulse/postal",
+  "description": "Postal for PHP library (WhatPulse fork).",
+  "keywords": ["postal", "mail"],
+  "license": "MIT",
+  "homepage": "https://github.com/atech/postal",
+  "authors": [{
+    "name": "Adam Cooke",
+    "email": "me@adamcooke.io"
+  }],
+  "type": "library",
+  "version": "1.2",
+  "require": {
+    "php": ">=5.4",
+    "rmccue/requests": ">=1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Postal\\": "src/"
     }
+  }
 }
