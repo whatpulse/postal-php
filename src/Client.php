@@ -5,6 +5,8 @@ namespace Postal;
 class Client
 {
     protected $ssl_verify;
+    protected $host;
+    protected $serverKey;
 
     public function __construct($host, $serverKey)
     {
@@ -30,6 +32,9 @@ class Client
 
         // Make the body
         $json = json_encode($parameters);
+        if (!$json) {
+            throw new Error(sprintf('[FATAL] Unable to encode parameters into json!\n\nparameters: [%s]', $parameters));
+        }
 
         // Make the request
         $response = \WpOrg\Requests\Requests::post($url, $headers, $json, array('verify' => $this->ssl_verify));
